@@ -5,7 +5,7 @@ import { createCompliment } from "../modules/TagsCompliments/controllers/CreateC
 import { ensureAuthenticated } from "../middlewares/EnsureAuhenticated"
 
 import { listTags } from "../modules/TagsCompliments/controllers/ListTags"
-import { listComplimentsController } from "../modules/TagsCompliments/controllers/ListCompliments"
+import { listCompliments } from "../modules/TagsCompliments/controllers/ListCompliments"
 
 const tagsComplimentsRoutes = Router()
 
@@ -13,6 +13,6 @@ tagsComplimentsRoutes.post("/tags", /*ensureAuthenticated,*/ ensureAdmin, create
 tagsComplimentsRoutes.post("/compliments", ensureAuthenticated, createCompliment.handle)
 
 tagsComplimentsRoutes.get("/tags", listTags.handle)
-tagsComplimentsRoutes.get("/compliments", listComplimentsController.handle)
+tagsComplimentsRoutes.get("/compliments", listCompliments.handle)
 
 export { tagsComplimentsRoutes }

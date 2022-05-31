@@ -1,5 +1,5 @@
 import { ListComplimentsController } from "./ListComplimentsController";
 
-const listComplimentsController = new ListComplimentsController()
+const listCompliments = new ListComplimentsController()
 
-export { listComplimentsController }
+export { listCompliments }
