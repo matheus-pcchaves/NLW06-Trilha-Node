@@ -9,7 +9,7 @@ import { listCompliments } from "../modules/TagsCompliments/controllers/ListComp
 
 const tagsComplimentsRoutes = Router()
 
-tagsComplimentsRoutes.post("/tags", /*ensureAuthenticated,*/ ensureAdmin, createTag.handle)
+tagsComplimentsRoutes.post("/tags", ensureAuthenticated, /*ensureAdmin,*/ createTag.handle)
 tagsComplimentsRoutes.post("/compliments", ensureAuthenticated, createCompliment.handle)
 
 tagsComplimentsRoutes.get("/tags", listTags.handle)

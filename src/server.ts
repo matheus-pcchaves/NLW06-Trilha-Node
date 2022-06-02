@@ -1,8 +1,11 @@
 import "reflect-metadata"
 import express, { Request, Response, NextFunction } from "express"
+import swaggerUi from "swagger-ui-express"
+
 import "express-async-errors"
 
 import { router } from "./routes/index"
+import swaggerFile from "./swagger.json"
 
 import "./database"
 
@@ -10,6 +13,8 @@ import "./database"
 const app = express()
 
 app.use(express.json())
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 app.use(router)
 
